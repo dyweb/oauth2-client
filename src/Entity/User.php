@@ -5,6 +5,8 @@ namespace League\OAuth2\Client\Entity;
 class User
 {
     protected $uid;
+    protected $code;
+    protected $account;
     protected $nickname;
     protected $name;
     protected $firstName;
@@ -55,6 +57,8 @@ class User
     {
         return [
             'uid' => $this->uid,
+            'code' => $this->code,
+            'account' => $this->account,
             'nickname' => $this->nickname,
             'name' => $this->name,
             'firstName' => $this->firstName,
@@ -77,6 +81,12 @@ class User
             switch ($key) {
                 case 'uid':
                     $this->uid = $value;
+                    break;
+                case 'code':
+                    $this->code = $value;
+                    break;
+                case 'account':
+                    $this->account = $value;
                     break;
                 case 'nickname':
                     $this->nickname = $value;

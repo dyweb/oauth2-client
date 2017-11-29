@@ -8,7 +8,7 @@ use League\OAuth2\Client\Token\AccessToken as AccessToken;
 class Jaccount extends AbstractProvider
 {
     public $scopes = array(
-        ''
+        'basic', 'essential', 'profile'
     );
 
     public $responseType = 'json';

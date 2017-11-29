@@ -31,7 +31,7 @@ class Jaccount extends AbstractProvider
 
     public function userDetails($response, \League\OAuth2\Client\Token\AccessToken $token)
     {
-        $response = (array) $response;
+        $response = ((array) $response)["entities"][0];
         $school_name = '上海交通大学';
 
         $uid = $response->account;
@@ -43,7 +43,8 @@ class Jaccount extends AbstractProvider
             'uid' => $uid,
             'name' => $name,
             'school_name' => $school_name,
-            'student_number' => $student_number
+            'student_number' => $student_number,
+            'code' => $student_number
         ));
         return $user;
     }
